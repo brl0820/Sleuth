@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sleuth</title>
+<link rel="stylesheet" href="sleuth.css">
+</head>
+<body>
+<p id="intro">Escolha de onde o Sleuth procura, veja se cada site está respondendo e teste os links dos arquivos. Toque no título de uma categoria para abrir ou fechar.</p>
+<div id="top" class="row"></div>
+<div id="msg" role="status" aria-live="polite"></div>
+
+<section class="cat" data-cat="fontes">
+  <h2><button type="button" class="cat-head" aria-expanded="true" aria-controls="cat-fontes"><span class="chev" aria-hidden="true"></span><span class="cat-title">Fontes</span><span class="cat-sum" id="sum-fontes"></span></button></h2>
+  <div class="cat-body" id="cat-fontes">
+    <p>Desligue as que você não quer usar. “Testar” faz uma busca de verdade na fonte e confere se o arquivo chega. Em “Espelhos”, abaixo de cada fonte, você vê, testa e acrescenta endereços alternativos do site para procurar o livro. Cada fonte com link direto tem também “Alternativas de download”: outros servidores para baixar o arquivo quando o link normal falha. O Mobilism não aceita espelhos, porque a sua senha iria junto.</p>
+    <ul id="sources" class="plain"></ul>
+    <h3>Adicionar uma fonte</h3>
+    <div class="card" id="add"></div>
+    <h3>Monitor de espelhos</h3>
+    <div id="slum"></div>
+  </div>
+</section>
+
+<section class="cat" data-cat="contas">
+  <h2><button type="button" class="cat-head" aria-expanded="false" aria-controls="cat-contas"><span class="chev" aria-hidden="true"></span><span class="cat-title">Contas e acessos</span><span class="cat-sum" id="sum-contas"></span></button></h2>
+  <div class="cat-body" id="cat-contas" hidden>
+    <p>Opcional. Ficam guardados só no computador onde o addon roda e nunca são mostrados de novo.</p>
+    <div id="creds"></div>
+  </div>
+</section>
+
+<section class="cat" data-cat="navegador">
+  <h2><button type="button" class="cat-head" aria-expanded="false" aria-controls="cat-navegador"><span class="chev" aria-hidden="true"></span><span class="cat-title">Navegador do addon</span><span class="cat-sum" id="sum-navegador"></span></button></h2>
+  <div class="cat-body" id="cat-navegador" hidden>
+    <p>Alguns sites (como Anna’s Archive e Z-Library) só respondem a um navegador de verdade. O Sleuth usa um navegador próprio, escondido, e lembra as confirmações que você faz.</p>
+    <div id="browser" class="card"></div>
+  </div>
+</section>
+
+<section class="cat" data-cat="atualizacoes">
+  <h2><button type="button" class="cat-head" aria-expanded="false" aria-controls="cat-atualizacoes"><span class="chev" aria-hidden="true"></span><span class="cat-title">Atualizações</span><span class="cat-sum" id="sum-atualizacoes"></span></button></h2>
+  <div class="cat-body" id="cat-atualizacoes" hidden>
+    <p>O Sleuth se atualiza pelos Releases do GitHub. Só instala pacotes assinados pelo autor, confere o hash antes e volta sozinho à versão anterior se a nova não subir. Atualizações que mudam as permissões do addon nunca são instaladas sozinhas.</p>
+    <div id="update" class="card"></div>
+  </div>
+</section>
+
+<section class="cat" data-cat="sobre">
+  <h2><button type="button" class="cat-head" aria-expanded="false" aria-controls="cat-sobre"><span class="chev" aria-hidden="true"></span><span class="cat-title">Sobre este addon</span><span class="cat-sum" id="sum-sobre"></span></button></h2>
+  <div class="cat-body" id="cat-sobre" hidden>
+    <p>Tudo o que o Sleuth faz, onde ficam os arquivos dele, o que ele já baixou e com quem ele conversa. Os tamanhos e os endereços acessados são medidos agora, no seu computador.</p>
+    <div id="about"></div>
+  </div>
+</section>
+
+<script src="bridge.js"></script>
+<script src="painel.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confirmar acesso</title>
+<link rel="stylesheet" href="sleuth.css">
+</head>
+<body>
+<p>Alguns sites pedem para provar que você é uma pessoa. O Sleuth abre o site num navegador próprio e mostra a página aqui: faça o que ela pedir (marcar “não sou um robô”, resolver a imagem). Depois de confirmado, a busca volta a funcionar sozinha e o Sleuth lembra a confirmação.</p>
+<div id="msg" role="status" aria-live="polite"></div>
+<div id="sites" class="row"></div>
+<div id="stage-box" hidden>
+  <div class="stage" id="stage"><div class="wait">Abrindo o site…</div></div>
+  <p class="help" id="hint">Toque na imagem para clicar. Para escrever, use o campo abaixo.</p>
+  <div class="row">
+    <div class="grow"><input type="text" id="typed" placeholder="Texto a digitar na página" aria-label="Texto a digitar na página" autocomplete="off"></div>
+    <button id="send" type="button">Digitar</button>
+    <button id="enter" type="button">Enter</button>
+  </div>
+  <div class="row" style="margin-top:8px">
+    <button id="up" type="button" aria-label="Rolar para cima">↑ Rolar</button>
+    <button id="down" type="button" aria-label="Rolar para baixo">↓ Rolar</button>
+    <button id="full" type="button" aria-pressed="false">Ver a página inteira</button>
+    <button id="reload" type="button">Recarregar</button>
+    <button id="cancel" type="button" class="danger">Cancelar</button>
+  </div>
+</div>
+<div id="done" hidden>
+  <p class="okmsg" id="donetext">Confirmado!</p>
+  <button class="primary" id="back" type="button">Voltar à busca</button>
+</div>
+<script src="bridge.js"></script>
+<script src="verificar.js"></script>
+</body>
+</html>

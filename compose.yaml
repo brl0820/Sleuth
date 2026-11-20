@@ -1,0 +1,23 @@
+# docker compose up -d --build
+# Depois, no app: Addons > Instalar, com o endereço http://localhost:17002/manifest.json
+name: sleuth
+services:
+  sleuth:
+    build: { context: ., args: { WITH_BROWSER: "1" } }
+    image: sleuth:latest
+    user: "${PUID:-1000}:${PGID:-1000}"
+    # Só este computador. Para um celular na mesma rede (Android), use "17002:7002" e troque PUBLIC_URL pelo IP deste computador (só em rede de confiança).
+    ports: ["127.0.0.1:17002:7002"]
+    environment:
+      PUBLIC_URL: http://localhost:17002
+    restart: unless-stopped
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    # Preferências, confirmações do navegador e atualizações instaladas: precisam sobreviver a reinícios.
+    volumes: ["sleuth-data:/data"]
+    tmpfs: ["/tmp"]
+    shm_size: "512m"
+
+volumes:
+  sleuth-data:

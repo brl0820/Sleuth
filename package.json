@@ -1,0 +1,16 @@
+{
+  "name": "sleuth",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node launcher.js",
+    "test": "node test/kit.test.mjs && node test/sites.test.mjs && node test/jobs.test.mjs && node test/panel.test.mjs && node test/mirrors.test.mjs && node test/ranking.test.mjs && node test/zip.test.mjs && node test/update.test.mjs && node test/launcher.test.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "playwright-core": "1.62.1"
+  }
+}
