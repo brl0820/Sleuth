@@ -66,7 +66,7 @@ jobs:
           UPDATE_SIGNING_KEY: ${{ secrets.UPDATE_SIGNING_KEY }}
         run: node scripts/build-release.mjs app
       - run: node scripts/build-release.mjs sums
-      - name: Publicar (rascunho primeiro: o update.json só vai ao ar com todos os arquivos já enviados)
+      - name: "Publicar (rascunho primeiro, para o update.json só ir ao ar com todos os arquivos já enviados)"
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
